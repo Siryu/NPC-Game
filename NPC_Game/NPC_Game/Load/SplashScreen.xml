@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <SplashScreen>
   <Image>
+    <Effects>FadeEffect</Effects>
+    <IsActive>true</IsActive>
     <Path>SplashScreen/DKChocobo</Path>
     <Position>
       <X>200</X>
