@@ -51,7 +51,8 @@ namespace NPC_Game
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            ScreenManager.Instance.GraphicsDevice = GraphicsDevice;
+            ScreenManager.Instance.SpriteBatch = spriteBatch;
             ScreenManager.Instance.LoadContent(Content);
         }
 
@@ -87,9 +88,9 @@ namespace NPC_Game
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
-
+            spriteBatch.Begin();
             ScreenManager.Instance.Draw(spriteBatch);
-
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }

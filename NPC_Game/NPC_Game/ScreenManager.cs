@@ -10,13 +10,15 @@ namespace NPC_Game
 {
     public class ScreenManager
     {
+        public Vector2 Dimensions { private set; get; }
+        public ContentManager Content { private set; get; }
+        public GraphicsDevice GraphicsDevice;
+        public SpriteBatch SpriteBatch;
+
         private static ScreenManager instance;
         private GameScreen currentScreen;
-        public ContentManager Content { private set; get; }
-        XmlManager<GameScreen> xmlGameScreenManager;
-
-        public Vector2 Dimensions { private set; get; }
-
+        private XmlManager<GameScreen> xmlGameScreenManager;
+        
         public static ScreenManager Instance
         {
             get

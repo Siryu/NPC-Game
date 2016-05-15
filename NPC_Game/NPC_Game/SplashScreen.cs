@@ -9,30 +9,31 @@ namespace NPC_Game
 {
     public class SplashScreen : GameScreen
     {
-        private Texture2D image;
         public string Path;
+
+        public Image Image;
 
         public override void LoadContent()
         {
             base.LoadContent();
-            image = Content.Load<Texture2D>(Path);
+            Image.LoadContent();
         }
 
         public override void UnloadContent()
         {
             base.UnloadContent();
+            Image.UnloadContent();
         }
 
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
+            Image.Update(gameTime);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Begin();
-            spriteBatch.Draw(image, Vector2.Zero, Color.White);
-            spriteBatch.End();
+            Image.Draw(spriteBatch);
         }
     }
 }
